@@ -1,0 +1,43 @@
+library FreetrackClient;
+
+{ Important note about DLL memory management: ShareMem must be the
+  first unit in your library's USES clause AND your project's (select
+  Project-View Source) USES clause if your DLL exports any procedures or
+  functions that pass strings as parameters or function results. This
+  applies to all strings passed to and from your DLL--even those that
+  are nested in records and classes. ShareMem is the interface unit to
+  the BORLNDMM.DLL shared memory manager, which must be deployed along
+  with your DLL. To avoid using BORLNDMM.DLL, pass string information
+  using PChar or ShortString parameters. }
+
+uses
+  FTTypes in 'FTTypes.pas',
+  FTClient in 'FTClient.pas';  // Client must come after types for correct exports
+
+{$R *.res}
+
+const
+  DLL_PROCESS_ATTACH = 1;
+  DLL_PROCESS_DETACH = 0;
+
+exports
+  FTGetData,
+  FTReportName,
+  FTGetDllVersion,
+  FTProvider;
+
+
+procedure dllMain(reason : Integer);
+begin
+  case reason of
+    DLL_PROCESS_ATTACH : OpenMapping;
+    DLL_PROCESS_DETACH : DestroyMapping;
+  end;
+end;
+
+
+begin
+  DllProc := @dllMain;
+  DllProc(DLL_PROCESS_ATTACH);
+end.
+ 

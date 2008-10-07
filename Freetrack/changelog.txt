@@ -1,0 +1,105 @@
+
+FreeTrack Version History
+=========================
+
+* 2.2.0.0
+---------- 
+.: RGB filter resolution and sensitivity improved. 
+.: Force Exposure integrated into camera properties, all slider and checkbox states are automatically remembered. 
+.: Smoothing and averaging made indepedent of frame rate. 
+.: Maintaining paused data is optional so that view can be changed by other means. 
+.: Tracked points are highlighted for better visibility.
+.: Comprehensive software documentation. 
+.: Dialog displayed when new TrackIR program detected for name entry. 
+.: TrackIR, SmartNav and OptiTrack cameras supported. Need to install OptiTrack SDK.
+.: Center of rotation calibration improved, simplified and extended to all 6dof tracking modes. 
+.: Camera calibration available for calibrating all distances to millimeters. 
+.: Profile extension changed from *.fgp (FreeTrack Game Profile) changed to *.ftp (FreeTrack Profile).
+.: Controls now have default mapping. 
+.: Axis mapping, primarily for allowing head mounted cameras (x and y swapped with yaw and pitch). 
+.: Camera orientation can be accounted for so that translation directions are correct.  
+.: 3D preview options (in right click menu) for displaying render frame rate and pose data frame rate. 
+.: Fixed: TrackIR enabled games freezing on launch for some people (even when FreeTrack is not running). 
+.: Four point cap sensitivities increased to match three point cap and clip.
+.: Open source FreeTrack interface available for 3rd party apps. See SDK directory. 
+.: Point size max/min diameter control. 
+.: Jitter changed to measure number of frames that deviate by more than 40 percent instead of 15 percent. 
+.: Fixed: Point tracking not covering entire video for resolutions 640x480 and higher. 
+.: Fixed: NAN axis-lock. A 3 point cap model that produced NAN errors is still degenerate though.
+.: Fixed: 4 point cap custom model dimensions initialization. 
+.: Option to ignore backward Z movement, mainly to avoid virtual head passing through vehicle seat.  
+.: Video codec support should now include; YVU9, IF09, YV12, YV16, IYUV, I420, NV12, IMC1, IMC2, IMC3, IMC4, Y800, RGB8, Y8, GREY, YUYV, YUY2, YVYU, UYVY, Y422, RGB24, ARGB32 and RGB32.
+.: USB Video Class (UVC) standard now supported (YUYV) (eg driverless webcam). 
+.: Wii remote camera auto-orientation using accelerometer data.
+.: Added support for Wii remote camera, practically no cpu usage and more than triple normal webcam frame rate, tested with BlueSoleil. 
+.: Greyed disabled options in Camera Properties can be enabled just by clicking on them (auto-exposure workaround). 
+.: Extra game support if TIRViews.dll is available (comes with TrackIR software). Notably full 6DOF in FS2004. 
+.: Translation can be made with respect to current view, using optional yaw, pitch and roll and affecting optional x, y and z axes.
+.: Fixed: RGB mode crashing with too much light. 
+.: 3D preview fps no longer limited to webcam fps, uses interpolated data, better representation of tracking quality.  
+.: Custom center; define your own default center location and orientation.
+.: Grand Prix Legends TIR detection work-around. 
+.: Significant improvement to tracking responsiveness and accuracy by using weighted mean to find point centers instead of bounding box. Less smoothing required. 
+.: Control input now possible via mouse and joystick buttons and extended keyboard keys recognised. 
+.: Auto-select correct language on first run if translation available.
+.: Multi-language support using DKLang. New translations must be made using DKLang Translation Editor, see Language directory for details. 
+.: Fixed: ArmA rapid view shaking due to short data timeout. 
+
+* 2.1.0.0
+----------
+.: FS2004/2002 4dof support (requires FSUIPC.dll 3.xx in Modules directory)
+.: Video demonstration mode.
+.: Keyboard output.
+.: Absolute mouse control, better accuracy for desktop use.
+.: Pixel doubling
+.: Improved responsiveness
+.: Filter can be manually changed via ini file (auto, mmx, sse2).
+.: 3D scene destroyed on minimization to improve compatibility.  
+.: Preset response curves available through right-click popup and ability to copy curves to other axes. 
+.: Response curves no longer cause centering lag. 
+.: Enlarged response curves from 160 to 180 degrees. 
+.: Output page added to GUI, mouse options for axis source, mousewheel and autopan, PPJoy controller number can now be selected. 
+.: Dynamic smoothing control, reduces when head moves, and increases when head is stationary. 
+.: Center hotkey works while paused. 
+.: Middle mouse center option.
+.: Double-tap to change hotkey toggle mode.
+.: Hotkey page added to GUI, stored in profile, axis and output have on/off hotkeys, smoothing can be modified via hotkey.
+.: FSX support through SimConnect.
+.: Launch at startup, start minimized, confirm close and auto-minimize options.  
+.: Video resolution remembered.
+.: Force camera exposure control dialog, ensures new video streams have desired exposure. 
+.: Auto select correct filter for user's cpu if .ax file is missing.
+.: RGB24 3 point tracking fixed. 
+.: 3 point cap tracking mode. 
+.: New interpolation timer with control of the number of additional frames. 
+.: Auto-load profile on detection of specified 6dof capable game, optional. 
+.: New profile manager, drag and drop games to associate them with a profile for autoloading. 
+.: Better synchronization of interpolation with webcam.
+.: 'Floating deadzone' renamed to 'smoothing' to reduce ambiguity. 
+
+* 2.0.0.0
+-----------
+.: 3 Points Clip and 4 points Cap optimizations.
+.: Average is included in profile tab 
+.: CJPG Not implemented
+	
+* 1.2.0.1 Beta test version (never released)
+-----------
+.: include Single Point, 3 Points Clip, 4 Points Cap
+.: New GUI with icons
+.: News Functions
+.: CJPG Not implemented
+	
+* 1.1.0.0 
+-----------
+.: Less CPU Usage
+.: 4 Points Cap only
+.: Filter Optimisation RGB 24 Bits, I420, RGB 555 (16 Bits)
+.: CJPG Not implemented
+.: About Tab
+.: invert Tab
+			
+* 1.0.0.0 
+-----------
+.: First no beta release 			
+.: 4 Points Cap only
