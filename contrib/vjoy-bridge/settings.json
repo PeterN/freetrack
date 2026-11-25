@@ -1,0 +1,19 @@
+{
+  // vJoy device number set up in "Configure vJoy" (1-16)
+  "DeviceId": 1,
+  // Head angle (in degrees, after your FreeTrack curves) that gives full joystick travel.
+  // Smaller = more sensitive. FreeTrack's own curves still apply first.
+  "YawFullScaleDegrees": 90,
+  "PitchFullScaleDegrees": 90,
+  // Flip a direction if steering goes the wrong way
+  "InvertYaw": false,
+  "InvertPitch": false,
+  // How often to check FreeTrack, in ms (1-50)
+  "PollIntervalMs": 2,
+  // After this many ms with no new data the tray shows "holding last position"
+  "StaleAfterMs": 250,
+  // After this many ms with no data, glide back to centre. 0 = hold last position forever.
+  "ReturnToCentreAfterMs": 0,
+  // Full path to Freetrack.exe. Leave empty to look in a "FreeTrack" folder next to this program.
+  "FreeTrackPath": ""
+}
